@@ -1,2 +1,2 @@
-# Di dalam file repo ini berisi:
+## Di dalam file repo ini berisi:
 Tugas Penelitian dari Pak Kodong, yang berisi klasifikasi tweet pada kolom "text" berdasarkan filter kata kunci yang sudah disesuaikan masing-masing kategori klasifikasi. Kemudian, dilakukan perhitungan jumlah total tweet dan like pada masing-masing klasifikasi, selain itu juga dilakukan penilaian terhadap masing-masing tweet yang ada, apakah termasuk effective atau bahkan ineffective kah sebuah tweet tersebut di dalam kategori klasifikasinya.
