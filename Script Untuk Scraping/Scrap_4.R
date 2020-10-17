@@ -2,7 +2,7 @@ library("rtweet")
 library(dplyr)
 
 token <- create_token(
-  app = "Reo Scrapping",
+  app = "Twitter Scrapping",
   consumer_key = "m0dL9rqiA9u2Fy0fpdzlklcML",
   consumer_secret = "v7NsTOxEtG3OppWwIDfB7LcRCtl7gHLTPqIwmSuUk0bi1203ln",
   access_token = "538784946-jVMIlJtz1wKRk9wpAjQMRCwqy7VfEDuYoS5tezMk",
