@@ -21,24 +21,21 @@ users <- list("IndonesiaInCPH", "KBRI_Athena", "kbrimoskow", "kbrihelsinki",
               "kbri_tashkent", "KbriYangon", "KBRI_Islamabad", "KBRITokyo", "IndonesiaDhaka", "KBRI_Manila",
               "kbrikualalumpur", "kbrisingapura", "KBRI_Bangkok")
 
+for (awal in first_account){
+  tweets <- get_timelines(awal, n=5)
+  df = data.frame(lapply(tweets, as.character))
+  for (account in users){
+    hasil_tweet <- get_timelines(account, n=5)
+    df_new <- data.frame(lapply(hasil_tweet, as.character))
+    df <- rbind(df, df_new)
+  }
+  write.csv(df, file = "hasil_scrap_4.csv")
+}
+
 for (akun in users) {
   tweets <- get_timelines(akun, n=3200)
   df = data.frame(lapply(tweets, as.character))
 }
-
-for (awal in first_account){
-  tweets <- get_timelines(awal, n=3200)
-  df = data.frame(lapply(tweets, as.character))
-  for (account in users){
-    hasil_tweet <- get_timelines(account, n=3200)
-    df_new <- data.frame(lapply(hasil_tweet, as.character))
-    
-    # appen df_new ke df
-    newdf <- rbind(df, de)
-  }
-  write.csv(newdf, file = "hasil_scrap_4.csv")
-}
-
 write.csv(df, file = sprintf("%s.csv", akun))
 
 # -------- List Akun yang ingin di scrap ----------
