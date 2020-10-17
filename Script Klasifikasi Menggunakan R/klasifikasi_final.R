@@ -49,7 +49,11 @@ df <- df %>% select(user_id, screen_name, created_at, source, location, text, re
  klasifikasiC$scoring_to_clf <- cut(as.integer(klasifikasiC$percent), breaks=c(-1,49,69,84,100), labels=c("Ineffective","Adequate","Moderately Effective","Effetive"))
  klasifikasiD$scoring_to_clf <- cut(as.integer(klasifikasiD$percent), breaks=c(-1,49,69,84,100), labels=c("Ineffective","Adequate","Moderately Effective","Effetive"))
  
- View(klasifikasiC)
+ # gabungkan menjadi dataframe baru
+ df_new <- dplyr::bind_rows(klasifikasiA, klasifikasiB, klasifikasiC, klasifikasiD)
+ View(df_new)
+ 
+ View(klasifikasiA)
  
  
  
