@@ -51,12 +51,8 @@ df <- df %>% select(user_id, screen_name, created_at, source, location, text, re
  
  # gabungkan menjadi dataframe baru
  df_new <- dplyr::bind_rows(klasifikasiA, klasifikasiB, klasifikasiC, klasifikasiD)
- View(df_new)
  
- View(klasifikasiA)
- 
- 
- 
- 
+ # simpan ke csv baru
+ write.csv(df_new, file = "df_baru_4.csv")
  
  
