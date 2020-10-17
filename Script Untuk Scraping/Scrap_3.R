@@ -23,9 +23,9 @@ users <- list("kbridenhaag", "IndonesiaInCPH", "KBRI_Athena", "kbrimoskow", "kbr
 for (akun in users) {
   tweets <- get_timelines(akun, n=3200)
   df = data.frame(lapply(tweets, as.character))
-  
-  write.csv(df, file = sprintf("%s.csv", akun))
 }
+
+write.csv(df, file = sprintf("%s.csv", akun))
 
 # -------- List Akun yang ingin di scrap ----------
 users <- list("kbridenhaag", "IndonesiaInCPH", "KBRI_Athena", "kbrimoskow", "kbrihelsinki",
