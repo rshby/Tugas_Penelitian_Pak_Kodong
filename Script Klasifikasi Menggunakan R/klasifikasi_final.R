@@ -50,9 +50,10 @@ df <- df %>% select(user_id, screen_name, created_at, source, location, text, re
  klasifikasiD$scoring_to_clf <- cut(as.integer(klasifikasiD$percent), breaks=c(-1,49,69,84,100), labels=c("Ineffective","Adequate","Moderately Effective","Effetive"))
  
  # gabungkan menjadi dataframe baru
- df_new <- dplyr::bind_rows(klasifikasiA, klasifikasiB, klasifikasiC, klasifikasiD)
+ df <- dplyr::bind_rows(klasifikasiA, klasifikasiB, klasifikasiC, klasifikasiD)
  
  # simpan ke csv baru
- write.csv(df_new, file = "df_baru_4.csv")
+ df_new <- data.frame(lapply(df, as.character))
+ write.csv(df_new,"df_baru_4.csv")
  
  
