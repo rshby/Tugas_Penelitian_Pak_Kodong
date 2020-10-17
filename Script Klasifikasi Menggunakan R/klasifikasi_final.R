@@ -43,6 +43,6 @@ df <- df %>% select(user_id, screen_name, created_at, source, location, text, re
  klasifikasiC$percent <- lapply(klasifikasiC$percent, round, 0)
  klasifikasiD$percent <- lapply(klasifikasiD$percent, round, 0)
 
- View(klasifikasiA)
+ View(klasifikasiB)
  max(klasifikasiA$jumlah_rt_like)
  
