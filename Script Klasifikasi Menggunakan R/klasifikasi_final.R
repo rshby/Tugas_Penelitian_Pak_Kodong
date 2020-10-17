@@ -43,6 +43,16 @@ df <- df %>% select(user_id, screen_name, created_at, source, location, text, re
  klasifikasiC$percent <- lapply(klasifikasiC$percent, round, 0)
  klasifikasiD$percent <- lapply(klasifikasiD$percent, round, 0)
 
- View(klasifikasiB)
- max(klasifikasiA$jumlah_rt_like)
+ # binning ke kategori scoring
+ klasifikasiA$scoring_to_clf <- cut(as.integer(klasifikasiA$percent), breaks=c(-1,49,69,84,100), labels=c("Ineffective","Adequate","Moderately Effective","Effetive"))
+ klasifikasiB$scoring_to_clf <- cut(as.integer(klasifikasiB$percent), breaks=c(-1,49,69,84,100), labels=c("Ineffective","Adequate","Moderately Effective","Effetive"))
+ klasifikasiC$scoring_to_clf <- cut(as.integer(klasifikasiC$percent), breaks=c(-1,49,69,84,100), labels=c("Ineffective","Adequate","Moderately Effective","Effetive"))
+ klasifikasiD$scoring_to_clf <- cut(as.integer(klasifikasiD$percent), breaks=c(-1,49,69,84,100), labels=c("Ineffective","Adequate","Moderately Effective","Effetive"))
+ 
+ View(klasifikasiC)
+ 
+ 
+ 
+ 
+ 
  
