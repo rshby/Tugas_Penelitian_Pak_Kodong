@@ -51,6 +51,7 @@ df <- df %>% select(user_id, screen_name, created_at, source, location, text, re
  
  # gabungkan menjadi dataframe baru
  df <- dplyr::bind_rows(klasifikasiA, klasifikasiB, klasifikasiC, klasifikasiD)
+ View(df)
  
  # simpan ke csv baru
  df_new <- data.frame(lapply(df, as.character))
